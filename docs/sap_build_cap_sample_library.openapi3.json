@@ -15,12 +15,10 @@
   ],
   "tags": [],
   "paths": {
-    "/addQuotes": {
+    "/addQuotes(value= '{value}')": {
       "get": {
         "summary": "addQuotes",
-        "tags": [
-          "Service Operations"
-        ],
+        "tags": ["Service Operations"],
         "parameters": [
           {
             "required": true,
@@ -41,12 +39,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "allOf": [
-                    {
-                      "$ref": "#/components/schemas/sap_build_cap_sample_library.DataString"
-                    }
-                  ],
-                  "nullable": true
+                  "$ref": "#/components/schemas/sap_build_cap_sample_library.DataString"
                 }
               }
             }
@@ -60,9 +53,7 @@
     "/getListTodos": {
       "get": {
         "summary": "getListTodos",
-        "tags": [
-          "Service Operations"
-        ],
+        "tags": ["Service Operations"],
         "parameters": [],
         "responses": {
           "200": {
@@ -70,12 +61,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "allOf": [
-                    {
-                      "$ref": "#/components/schemas/sap_build_cap_sample_library.DataListArray"
-                    }
-                  ],
-                  "nullable": true
+                  "$ref": "#/components/schemas/sap_build_cap_sample_library.DataListArray"
                 }
               }
             }
@@ -89,21 +75,14 @@
     "/listToString": {
       "post": {
         "summary": "listToString",
-        "tags": [
-          "Service Operations"
-        ],
+        "tags": ["Service Operations"],
         "responses": {
           "200": {
             "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
-                  "allOf": [
-                    {
-                      "$ref": "#/components/schemas/sap_build_cap_sample_library.DataString"
-                    }
-                  ],
-                  "nullable": true
+                  "$ref": "#/components/schemas/sap_build_cap_sample_library.DataString"
                 }
               }
             }
@@ -136,12 +115,10 @@
         }
       }
     },
-    "/toInteger": {
+    "/toInteger(value= '{value}')": {
       "get": {
         "summary": "toInteger",
-        "tags": [
-          "Service Operations"
-        ],
+        "tags": ["Service Operations"],
         "parameters": [
           {
             "required": true,
@@ -162,12 +139,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "allOf": [
-                    {
-                      "$ref": "#/components/schemas/sap_build_cap_sample_library.DataInteger"
-                    }
-                  ],
-                  "nullable": true
+                  "$ref": "#/components/schemas/sap_build_cap_sample_library.DataInteger"
                 }
               }
             }
@@ -178,12 +150,10 @@
         }
       }
     },
-    "/toNumber": {
+    "/toNumber(value= '{value}')": {
       "get": {
         "summary": "toNumber",
-        "tags": [
-          "Service Operations"
-        ],
+        "tags": ["Service Operations"],
         "parameters": [
           {
             "required": true,
@@ -204,12 +174,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "allOf": [
-                    {
-                      "$ref": "#/components/schemas/sap_build_cap_sample_library.DataNumber"
-                    }
-                  ],
-                  "nullable": true
+                  "$ref": "#/components/schemas/sap_build_cap_sample_library.DataNumber"
                 }
               }
             }
@@ -220,12 +185,10 @@
         }
       }
     },
-    "/toStr": {
+    "/toStr(value= {value})": {
       "get": {
         "summary": "toString",
-        "tags": [
-          "Service Operations"
-        ],
+        "tags": ["Service Operations"],
         "parameters": [
           {
             "required": true,
@@ -253,12 +216,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "allOf": [
-                    {
-                      "$ref": "#/components/schemas/sap_build_cap_sample_library.DataString"
-                    }
-                  ],
-                  "nullable": true
+                  "$ref": "#/components/schemas/sap_build_cap_sample_library.DataString"
                 }
               }
             }
@@ -307,6 +265,7 @@
         "properties": {
           "responseArray": {
             "type": "array",
+            "required": true,
             "items": {
               "$ref": "#/components/schemas/sap_build_cap_sample_library.DataList"
             }
@@ -343,16 +302,11 @@
       },
       "error": {
         "type": "object",
-        "required": [
-          "error"
-        ],
+        "required": ["error"],
         "properties": {
           "error": {
             "type": "object",
-            "required": [
-              "code",
-              "message"
-            ],
+            "required": ["code", "message"],
             "properties": {
               "code": {
                 "type": "string"
@@ -367,10 +321,7 @@
                 "type": "array",
                 "items": {
                   "type": "object",
-                  "required": [
-                    "code",
-                    "message"
-                  ],
+                  "required": ["code", "message"],
                   "properties": {
                     "code": {
                       "type": "string"
