@@ -15,7 +15,7 @@
   ],
   "tags": [],
   "paths": {
-    "/toInteger(value= '{value}')": {
+    "/toInteger(value='{value}')": {
       "get": {
         "summary": "toInteger",
         "tags": ["Service Operations"],
@@ -51,7 +51,7 @@
       }
     },
     
-    "/toNumber(value= '{value}')": {
+    "/toNumber(value='{value}')": {
       "get": {
         "summary": "toNumber",
         "tags": ["Service Operations"],
@@ -87,7 +87,7 @@
       }
     },
     
-    "/addQuotes(value= '{value}')": {
+    "/addQuotes(value='{value}')": {
       "get": {
         "summary": "addQuotes",
         "tags": ["Service Operations"],
