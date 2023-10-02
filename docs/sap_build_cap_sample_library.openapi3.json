@@ -15,6 +15,78 @@
   ],
   "tags": [],
   "paths": {
+    "/toInteger(value= '{value}')": {
+      "get": {
+        "summary": "toInteger",
+        "tags": ["Service Operations"],
+        "parameters": [
+          {
+            "required": true,
+            "in": "query",
+            "name": "value",
+            "description": "String value needs to be enclosed in single quotes",
+            "schema": {
+              "type": "string",
+              "nullable": true,
+              "pattern": "^(null|'([^']|'')*')$",
+              "default": "null"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/sap_build_cap_sample_library.DataInteger"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    
+    "/toNumber(value= '{value}')": {
+      "get": {
+        "summary": "toNumber",
+        "tags": ["Service Operations"],
+        "parameters": [
+          {
+            "required": true,
+            "in": "query",
+            "name": "value",
+            "description": "String value needs to be enclosed in single quotes",
+            "schema": {
+              "type": "string",
+              "nullable": true,
+              "pattern": "^(null|'([^']|'')*')$",
+              "default": "null"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/sap_build_cap_sample_library.DataNumber"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    
     "/addQuotes(value= '{value}')": {
       "get": {
         "summary": "addQuotes",
@@ -115,76 +187,7 @@
         }
       }
     },
-    "/toInteger(value= '{value}')": {
-      "get": {
-        "summary": "toInteger",
-        "tags": ["Service Operations"],
-        "parameters": [
-          {
-            "required": true,
-            "in": "query",
-            "name": "value",
-            "description": "String value needs to be enclosed in single quotes",
-            "schema": {
-              "type": "string",
-              "nullable": true,
-              "pattern": "^(null|'([^']|'')*')$",
-              "default": "null"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/sap_build_cap_sample_library.DataInteger"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/error"
-          }
-        }
-      }
-    },
-    "/toNumber(value= '{value}')": {
-      "get": {
-        "summary": "toNumber",
-        "tags": ["Service Operations"],
-        "parameters": [
-          {
-            "required": true,
-            "in": "query",
-            "name": "value",
-            "description": "String value needs to be enclosed in single quotes",
-            "schema": {
-              "type": "string",
-              "nullable": true,
-              "pattern": "^(null|'([^']|'')*')$",
-              "default": "null"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/sap_build_cap_sample_library.DataNumber"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/error"
-          }
-        }
-      }
-    },
+
     "/toStr(value= {value})": {
       "get": {
         "summary": "toString",
